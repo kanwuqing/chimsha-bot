@@ -1,16 +1,16 @@
 import win32com.client
 objShell = win32com.client.Dispatch("WScript.Shell")
 allUserProgramsMenu = objShell.SpecialFolders("AllUsersPrograms")
-print(allUserProgramsMenu)
+# print(allUserProgramsMenu)
+shortcut = objShell.CreateShortCut("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\搜狗输入法医生版\\皮肤小盒子.lnk")
+print(shortcut.Targetpath)
+
 
 
 import os
 import tkinter as tk
 from tkinter import filedialog
 
-# 实例化
-root = tk.Tk()
-root.withdraw()
 
 
 def file_ext(filename, level=1):
@@ -168,7 +168,7 @@ if __name__ == '__main__':
     path = allUserProgramsMenu
 
     files = get_files(path)
-    print(files)
+    # print(files)
 
     folders = get_folders(path)
-    print(folders)
+    # print(folders)
